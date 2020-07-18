@@ -8,6 +8,7 @@ class Matrix extends Array{
              }
           }
           else {
+            if(value1.length%value2 != 0)return console.error("mtx.js> could not create the matrix because the amount of rows doesn't fit the provided array.")
             super([])
             let i = 0;
             value1.forEach((v) => {
@@ -49,6 +50,7 @@ class Matrix extends Array{
     }
     static sum(mtx1,mtx2){
       let mtxR = new Matrix(mtx1.length,mtx1[0].length)
+      if(!mtx2[0])mtx2 = new Matrix(mtx1.length,mtx1[0].length,mtx2)
       mtx1.forEach((v,i)=>{
         mtx1[i].forEach((u,j)=>{
           let val = mtx2[i]?mtx2[i][j]:mtx2;
@@ -59,6 +61,7 @@ class Matrix extends Array{
     }
     static mult(mtx1,mtx2){
       let mtxR = new Matrix(mtx1.length,mtx1[0].length)
+      if(!mtx2[0])mtx2 = new Matrix(mtx1.length,mtx1[0].length,mtx2)
       mtx1.forEach((v,i)=>{
         mtx1[i].forEach((u,j)=>{
           let val = mtx2[i]?mtx2[i][j]:mtx2;
@@ -69,12 +72,52 @@ class Matrix extends Array{
     }
     static pow(mtx1,mtx2){
       let mtxR = new Matrix(mtx1.length,mtx1[0].length)
+      if(!mtx2[0])mtx2 = new Matrix(mtx1.length,mtx1[0].length,mtx2)
       mtx1.forEach((v,i)=>{
         mtx1[i].forEach((u,j)=>{
           let val = mtx2[i]?mtx2[i][j]:mtx2;
           mtxR[i][j] = mtx1[i][j] ** val
         });
       })
+      return mtxR;
+    }
+    sum(mtx,set){
+      let mtx1 = this
+      let mtxR = new Matrix(mtx1.length,mtx1[0].length)
+      if(!mtx[0])mtx = new Matrix(mtx1.length,mtx1[0].length,mtx)
+      mtx1.forEach((v,i)=>{
+        mtx1[i].forEach((u,j)=>{
+          let val = mtx[i]?mtx[i][j]:mtx;
+          mtxR[i][j] = mtx1[i][j] + val
+        });
+      })
+      if(set)this = mtxR;
+      return mtxR;
+    }
+    mult(mtx,set){
+      let mtx1 = this
+      let mtxR = new Matrix(mtx1.length,mtx1[0].length)
+      if(!mtx[0])mtx = new Matrix(mtx1.length,mtx1[0].length,mtx)
+      mtx1.forEach((v,i)=>{
+        mtx1[i].forEach((u,j)=>{
+          let val = mtx[i]?mtx[i][j]:mtx;
+          mtxR[i][j] = mtx1[i][j] * val
+        });
+      })
+      if(set)this = mtxR;
+      return mtxR;
+    }
+    pow(mtx,set){
+      let mtx1 = this
+      let mtxR = new Matrix(mtx1.length,mtx1[0].length)
+      if(!mtx[0])mtx = new Matrix(mtx1.length,mtx1[0].length,mtx)
+      mtx1.forEach((v,i)=>{
+        mtx1[i].forEach((u,j)=>{
+          let val = mtx[i]?mtx[i][j]:mtx;
+          mtxR[i][j] = mtx1[i][j] ** val
+        });
+      })
+      if(set)this = mtxR;
       return mtxR;
     }
 };
