@@ -1,0 +1,27 @@
+{
+  "name": "mtx.js",
+  "version": "1.0.0",
+  "description": "mtx.js is a js module that gives you a matrix constructor based on the Array class.",
+  "main": "req.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wamuM/mtx.js.git"
+  },
+  "keywords": [
+    "Matrix",
+    "matrix",
+    "mtx",
+    "mtx.js",
+    "Array",
+    "Math"
+  ],
+  "author": "wamu_M",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wamuM/mtx.js/issues"
+  },
+  "homepage": "https://github.com/wamuM/mtx.js#readme"
+}
