@@ -1,8 +1,8 @@
 {
   "name": "mtx.js",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "description": "mtx.js is a js module that gives you a matrix constructor based on the Array class.",
-  "main": "req.js",
+  "main": "mtx.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +16,8 @@
     "mtx",
     "mtx.js",
     "Array",
-    "Math"
+    "Math",
+    "table"
   ],
   "author": "wamu_M",
   "license": "ISC",

@@ -14,9 +14,9 @@ use npm (node) intsaling the package with ``npm i mtx.js``
 ```js
 const Matrix = require("mtx.js");
 ```
-use deno
+use deno or a web engine (download it before in your project folder)
 ```js
-import "" as Matrix
+import "./imp.js" as Matrix
 ```
 or download it manualy from the [github project](https://github.com/wamuM/mtx.js)
 #### Using a Matrix
@@ -32,7 +32,7 @@ mtx1[row][column] = cellValue
 #### Creating a Matrix
 There are multiple ways to create a matrix with the class (from now known as Matrix) constructor.
 
-1- None module made matrix. 
+1- None module made matrix.<br>
 If you searched about it before finding this module, you may know that to easily create a matrix in js you only have to create an array with another array in each cell. 
 ```js
 var mtx1 = 
@@ -46,14 +46,14 @@ But if you want more methods such as transpose the matrix (more info bellow) you
 ```js
 var mtx2 = new Matrix(mtx1)
 ```
-2- Aray made matrix
+2- Aray made matrix <br>
 You can also create a matrix with an Array and the number of rows you want.
 ```js
 var mtx3 = new Matrix([0,1,2,0,1,2,0,1,2] ,  3  )
 //                           array         rows
 //if the array isn't long enought to have x rows it'll will throw an error
 ```
-3- placeholder matrix
+3- placeholder matrix <br>
 The last way to create a matrix is by creating a void matrix.
 ```js
 var mtx4 = new Matrix(rows, columns,?placeholder)
