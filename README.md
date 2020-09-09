@@ -9,16 +9,7 @@ mtx.js is a js module that gives you a matrix constructor based on the Array cla
 
 #### installing the package
 
-You have to require the module, to require the module you can:
-use npm (node) intsaling the package with ``npm i mtx.js``
-```js
-const Matrix = require("mtx.js");
-```
-use deno or a web engine (download it before in your project folder)
-```js
-import "./imp.js" as Matrix
-```
-or download it manualy from the [github project](https://github.com/wamuM/mtx.js)
+You can install the package via [npm](https://www.npmjs.com/package/mtx.js) or directly from the [github project](https://github.com/wamuM/mtx.j)
 #### Using a Matrix
 How do you use a Matrix? well, indeed you have to create the matrix with the class constructor (more info bellow)
 ```js
@@ -27,7 +18,7 @@ var mtx1 = new Matrix(3,3,0)
 and then you can get any cell by saying in wich row and wich column the cell is.
 ```js
 mtx1[row][column] = cellValue
-//be aware that we use the js array index systeme so the first cell is mtx1[0][0]
+//be aware that it uses the js array index systeme so the first cell is mtx1[0][0]
 ```
 #### Creating a Matrix
 There are multiple ways to create a matrix with the class (from now known as Matrix) constructor.
@@ -80,5 +71,18 @@ It's the same as using the console.table() command
 console.table(mtx2)
 ```
 ### .sum() .mult() and .pow()
-DOCS ARE WIP but i'm sure you can guess what sum and those methods do
+To sum, multiply or power all the elements of the matrix with another matrix you can use the ``.sum() .mult() and .pow()`` methods or use the static method with the same name
+```js
+var mtx1 = new Matrix(3,3,3)
+var mtx2 = new Matrix(2,2,2)
+var result;
+result = mtx1.mult(mtx2)
+result = Matrix.mult(mtx1,mtx2)
+// the set argument of the class instance
+result = mtx1.sum(mtx2,true)
+mtx1 == result //true
+```
+###.transpose() and .transpose
+WIP
+
 
